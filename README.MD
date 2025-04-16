@@ -1,4 +1,4 @@
-# Groq Customer Support Assistant
+# Groq Food Customer Support Assistant
 
 This project demonstrates a basic customer support assistant powered by the Groq Cloud language model. It uses Python and the `groq` library to interact with the model and provides a simple example of how to get started.
 
@@ -31,13 +31,13 @@ This project demonstrates a basic customer support assistant powered by the Groq
     cd your_project_directory
     ```
 
-2.  **Run the main Python script** (e.g., if your script is named `groq_assistant.py`):
+2.  **Run the main Python script** (e.g., if your script is named `customer_assistant.py`):
     ```bash
-    python groq_assistant.py
+    python customer_assistant.py.py
     ```
 
     This will execute the script, which in the example provided, sends a query to the Groq model and prints the response to your terminal.
 
 ## Example Usage
 
-The current example in `groq_assistant.py` sends the following prompt to the Groq model:
+The current example in `customer_assistant.py` sends the following prompt to the Groq model:
