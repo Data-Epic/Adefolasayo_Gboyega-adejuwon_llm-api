@@ -1,6 +1,12 @@
 import os
 from groq import Groq
 from dotenv import load_dotenv
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='assistant.log')
+logging.info("Starting Fast Food Support Assistant")
+
 
 load_dotenv()
 
@@ -14,8 +20,14 @@ print("Type 'EXIT' to end the conversation.")
 
 while True:
     user_query = input("You: ")
+    if not user_query.strip():
+        print("Please enter a valid question.")
+        logging.info("User provided empty input.")
+        continue
+    # Check if the user wants to exit
     if user_query.upper() == "EXIT":
         print("Thank you for using the Fast Food Support Assistant! Goodbye!")
+        logging.info("User ended the conversation.")
         break
     messages = [
         {
@@ -34,80 +46,11 @@ while True:
         )
         response = chat_completion.choices[0].message.content
         print("Assistant:", response)
+        logging.info(f"Assistant response: {response}")
     except Exception as e:
         print("Error:", e)
+        logging.error(f"Error during Groq API call: {e}")
         print("Please try again or type 'EXIT' to end.")
          
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#template_folder='C:\\Users\\DELL\\Desktop\\Fola_python\\LLMS\\templates')
